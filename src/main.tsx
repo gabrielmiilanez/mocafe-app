@@ -1,7 +1,9 @@
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import './index.css'
-import App from './App.tsx'
+import "./index.css";
+import PublicLayout from "./layouts/publicLayout/PublicLayout.tsx";
+import PanelLayout from "./layouts/panelLayout/PanelLayout.tsx";
+
 import Welcome from "./pages/Welcome/welcome.tsx";
 import Estoque from "./pages/Estoque/estoque.tsx";
 import Vendas from "./pages/Vendas/vendas.tsx";
@@ -9,8 +11,10 @@ import NotFound from "./pages/NotFound/notFound.tsx";
 import Panel from "./pages/Panel/panel.tsx";
 
 const router = createBrowserRouter([
+  
+  // Layout público 
   {
-    element: <App />,
+    element: <PublicLayout />,
     children: [
       {
         path: "/",
@@ -20,6 +24,13 @@ const router = createBrowserRouter([
         path: "/welcome",
         element: <Welcome />,
       },
+    ],
+  },
+
+  // Layout do painel
+  {
+    element: <PanelLayout />,
+    children: [
       {
         path: "/painel",
         element: <Panel />,
@@ -32,16 +43,15 @@ const router = createBrowserRouter([
         path: "/vendas",
         element: <Vendas />,
       },
-      {
-        path: "*",
-        element: <NotFound />,
-      },
     ],
+  },
+  
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <RouterProvider router={router} />
-  // </React.StrictMode>
 );
