@@ -1,5 +1,5 @@
 import AppSidebar from "@/components/ui/app-sidebar";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { Outlet } from "react-router-dom";
 
 const PanelLayout = () => {
@@ -8,6 +8,7 @@ const PanelLayout = () => {
       <SidebarProvider defaultOpen={true}>
         <aside className="">
           <AppSidebar />
+          <SidebarTrigger />
         </aside>
         <main className="flex-1 p-6">
           <Outlet />
