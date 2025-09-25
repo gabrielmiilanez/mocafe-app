@@ -1,4 +1,4 @@
-import banner from "../../../public/images/bannercafe.jpg";
+import banner from "../../assets/images/bannercafe.jpg";
 
 const Panel = () => {
   return (
