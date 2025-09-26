@@ -6,6 +6,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Home, Box, ShoppingCart, LogOut } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -30,6 +31,7 @@ export default function AppSidebar() {
       {/* HEADER */}
       <SidebarHeader className="border-b px-4 py-3">
         <h2 className="text-xl font-bold tracking-tight">☕ Mocafé</h2>
+        <SidebarTrigger className="flex md:hidden ml-4" />
       </SidebarHeader>
 
       {/* CONTENT */}
